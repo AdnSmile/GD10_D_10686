@@ -79,8 +79,7 @@ class DetailMahasiswaActivity : AppCompatActivity() {
     }
 
     private fun doDeleteData(nim:String) {
-        RClient.instances.deleteData(nim).enqueue(object :
-            Callback<ResponseCreate>{
+        RClient.instances.deleteData(nim).enqueue(object: Callback<ResponseCreate>{
             override fun onResponse(
                 call: Call<ResponseCreate>,
                 response: Response<ResponseCreate>

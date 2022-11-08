@@ -83,8 +83,7 @@ class FormEditMahasiswaActivity : AppCompatActivity() {
                     }
                 }
             }
-            override fun onFailure(call:
-                                   Call<ResponseDataMahasiswa>, t: Throwable) {
+            override fun onFailure(call: Call<ResponseDataMahasiswa>, t: Throwable) {
             }
         })
     }

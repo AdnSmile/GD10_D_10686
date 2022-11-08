@@ -10,8 +10,8 @@ import com.example.gd10_d_10686.databinding.ListDataMahasiswaBinding
 class MahasiswaAdapter (
     private val listMahasiswa:ArrayList<MahasiswaData>,
     private val context: Context
-
 ): RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder>() {
+
     inner class MahasiswaViewHolder(item:ListDataMahasiswaBinding)
         :RecyclerView.ViewHolder(item.root){
         private val binding = item
@@ -19,6 +19,7 @@ class MahasiswaAdapter (
             with(binding) {
                 txtNim.text = mahasiswaData.nim
                 txtNama.text = mahasiswaData.nama
+
                 cvData.setOnClickListener {
                     var i = Intent(context,
                         DetailMahasiswaActivity::class.java).apply {
@@ -36,8 +37,7 @@ class MahasiswaAdapter (
             parent,false
         ))
     }
-    override fun onBindViewHolder(holder: MahasiswaViewHolder,
-                                  position: Int) {
+    override fun onBindViewHolder(holder: MahasiswaViewHolder,position: Int) {
         holder.bind(listMahasiswa[position])
     }
     override fun getItemCount(): Int = listMahasiswa.size

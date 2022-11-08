@@ -17,8 +17,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         showDataFragment()
         binding.txtCari.setOnKeyListener(View.OnKeyListener{ _, keyCode, event->
-            if(keyCode == KeyEvent.KEYCODE_ENTER && event.action
-                == KeyEvent.ACTION_UP)
+            if(keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_UP)
             {
                 showDataFragment()
                 return@OnKeyListener true
@@ -37,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         val mFragmentManager = supportFragmentManager
         val mFragmentTransaction = mFragmentManager.beginTransaction()
         val mFragment = DataMahasiswaFragment()
+
         val textCari = binding.txtCari.text
         val mBundle = Bundle()
         mBundle.putString("cari", textCari.toString())

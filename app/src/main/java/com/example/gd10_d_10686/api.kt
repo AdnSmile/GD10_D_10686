@@ -5,8 +5,8 @@ import retrofit2.http.*
 
 interface api {
     @GET("mahasiswa/{cari}")
-    fun getData(@Path("cari") cari:String? = null):
-            Call<ResponseDataMahasiswa>
+    fun getData(@Path("cari") cari:String? = null): Call<ResponseDataMahasiswa>
+
     @FormUrlEncoded
     @POST("mahasiswa")
     fun createData(
@@ -16,9 +16,10 @@ interface api {
         @Field("prodinama") prodinama:String?,
         @Field("mhstgllhr") mhstgllhr:String?,
     ):Call<ResponseCreate>
+
     @DELETE("mahasiswa/{mhsnobp}")
-    fun deleteData(@Path("mhsnobp")mhsnobp:
-                   String?):Call<ResponseCreate>
+    fun deleteData(@Path("mhsnobp")mhsnobp: String?):Call<ResponseCreate>
+
     @FormUrlEncoded
     @PUT("mahasiswa/{mhsnobp}")
     fun updateData(
